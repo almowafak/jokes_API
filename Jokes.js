@@ -89,3 +89,40 @@ function myFunction() {
       console.log(err);
     });
 }
+
+fetch(
+  "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=Egypt",
+  {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
+      "x-rapidapi-key": "f3429b71d9mshc1bd5baa94078f9p160845jsn507a539f58f3"
+    }
+  }
+)
+  .then(response => {
+    console.log(response);
+    return response.json();
+  })
+  .then(response => {
+    console.log(response);
+    Array(response).forEach(
+      response =>
+        //   document.write("Country: " + response.data.covid19Stats[0].country)
+        (document.getElementById("lastChecked").innerHTML +=
+          response.data.lastChecked)
+    );
+    document.getElementById("country").innerHTML +=
+      response.data.covid19Stats[0].country;
+    document.getElementById("confirmed").innerHTML +=
+      response.data.covid19Stats[0].confirmed;
+    document.getElementById("deaths").innerHTML +=
+      response.data.covid19Stats[0].deaths;
+    document.getElementById("recovered").innerHTML +=
+      response.data.covid19Stats[0].recovered;
+  })
+  //   })
+
+  .catch(err => {
+    console.log(err);
+  });
