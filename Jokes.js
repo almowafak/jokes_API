@@ -57,3 +57,35 @@ function drawWeather(d) {
 window.onload = function() {
   weatherBallon(6167865);
 };
+
+function myFunction() {
+  var x = document.getElementById("mySelect1").selectedIndex;
+  var y = document.getElementById("mySelect2").selectedIndex;
+  var from = document.getElementById("mySelect1")[x].value;
+  var to = document.getElementById("mySelect2")[y].value;
+
+  fetch(
+    "https://currency-exchange.p.rapidapi.com/exchange?q=1.0&from=" +
+      from +
+      "&to=" +
+      to,
+    {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "currency-exchange.p.rapidapi.com",
+        "x-rapidapi-key": "f3429b71d9mshc1bd5baa94078f9p160845jsn507a539f58f3"
+      }
+    }
+  )
+    .then(response => {
+      console.log(response);
+      return response.json();
+    })
+    .then(response => {
+      console.log(response);
+      document.getElementById("tag1").innerHTML = response;
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}

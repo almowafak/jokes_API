@@ -71,7 +71,7 @@
   </style>
   <body>
     <div class="columns">
-      <div class="column is-half">
+      <div class="column is-one-third">
         <div class="box">
           <h1 style="color:red; font-size:25px">Joke of the Day</h1>
           <br />
@@ -103,7 +103,7 @@
         </div>
       </div>
 
-      <div class="column is-half">
+      <div class="column is-one-quarter">
         <div class="box">
           <div id="weather">
             <div id="description"></div>
@@ -112,6 +112,51 @@
           </div>
         </div>
       </div>
+      <div class="column is-one-quarter">
+        <div class="box">
+          <article class="media">
+            <div class="media-left">
+              <figure class="image is-64x64">
+                <img src="https://pluginsworld.com/wp-content/uploads/2018/08/currency-converter-small.jpg" alt="Image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                            
+          <div class="select">
+            <select id="mySelect1">
+              <option>From</option>
+              <option>USD</option>
+              <option>EGP</option>
+              <option>GBP</option>
+              <option>AUD</option>
+            </select>
+          </div>
+          <div class="select">
+            <select id="mySelect2">
+              <option>TO</option>
+              <option>EGP</option>
+              <option>USD</option>
+              <option>GBP</option>
+              <option>AUD</option>
+            </select>
+          </div>
+          <br>
+          <br>
+          <button
+            class="button is-medium is-link"
+            type="button"
+            onclick="myFunction()"
+          >
+            Convert
+          </button>
+    <br> 
+    <br>     
+    <span class="tag is-primary is-large" id="tag1"></span>
+        </div>
+      </div>
+    </div>
+    </div>
     </div>
   </body>
 </html>
