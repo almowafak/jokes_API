@@ -106,12 +106,18 @@ fetch(
   })
   .then(response => {
     console.log(response);
+    x = response.data.lastChecked;
+    console.log(x);
+    var y = x.replace("T", "      Time:");
+    var f = "Date:";
+    var r = f.concat(y);
     Array(response).forEach(
       response =>
         //   document.write("Country: " + response.data.covid19Stats[0].country)
-        (document.getElementById("lastChecked").innerHTML +=
-          response.data.lastChecked)
+
+        (document.getElementById("lastChecked").innerHTML += r)
     );
+
     document.getElementById("country").innerHTML +=
       response.data.covid19Stats[0].country;
     document.getElementById("confirmed").innerHTML +=
