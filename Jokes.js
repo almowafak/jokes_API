@@ -111,11 +111,12 @@ fetch(
     var y = x.replace("T", "      Time:");
     var f = "Date:";
     var r = f.concat(y);
+    var res = r.substring(0, 34);
     Array(response).forEach(
       response =>
         //   document.write("Country: " + response.data.covid19Stats[0].country)
 
-        (document.getElementById("lastChecked").innerHTML += r)
+        (document.getElementById("lastChecked").innerHTML += res)
     );
 
     document.getElementById("country").innerHTML +=
