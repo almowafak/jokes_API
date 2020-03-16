@@ -90,46 +90,46 @@ function myFunction() {
     });
 }
 
-fetch(
-  "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=Egypt",
-  {
-    method: "GET",
-    headers: {
-      "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
-      "x-rapidapi-key": "f3429b71d9mshc1bd5baa94078f9p160845jsn507a539f58f3"
-    }
-  }
-)
-  .then(response => {
-    console.log(response);
-    return response.json();
-  })
-  .then(response => {
-    console.log(response);
-    x = response.data.lastChecked;
-    console.log(x);
-    var y = x.replace("T", "      Time:");
-    var f = "Date:";
-    var r = f.concat(y);
-    var res = r.substring(0, 34);
-    Array(response).forEach(
-      response =>
-        //   document.write("Country: " + response.data.covid19Stats[0].country)
+// fetch(
+//   "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=Egypt",
+//   {
+//     method: "GET",
+//     headers: {
+//       "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
+//       "x-rapidapi-key": "f3429b71d9mshc1bd5baa94078f9p160845jsn507a539f58f3"
+//     }
+//   }
+// )
+//   .then(response => {
+//     console.log(response);
+//     return response.json();
+//   })
+//   .then(response => {
+//     console.log(response);
+//     x = response.data.lastChecked;
+//     console.log(x);
+//     var y = x.replace("T", "      Time:");
+//     var f = "Date:";
+//     var r = f.concat(y);
+//     var res = r.substring(0, 34);
+//     Array(response).forEach(
+//       response =>
+//         //   document.write("Country: " + response.data.covid19Stats[0].country)
 
-        (document.getElementById("lastChecked").innerHTML += res)
-    );
+//         (document.getElementById("lastChecked").innerHTML += res)
+//     );
 
-    document.getElementById("country").innerHTML +=
-      response.data.covid19Stats[0].country;
-    document.getElementById("confirmed").innerHTML +=
-      response.data.covid19Stats[0].confirmed;
-    document.getElementById("deaths").innerHTML +=
-      response.data.covid19Stats[0].deaths;
-    document.getElementById("recovered").innerHTML +=
-      response.data.covid19Stats[0].recovered;
-  })
-  //   })
+//     document.getElementById("country").innerHTML +=
+//       response.data.covid19Stats[0].country;
+//     document.getElementById("confirmed").innerHTML +=
+//       response.data.covid19Stats[0].confirmed;
+//     document.getElementById("deaths").innerHTML +=
+//       response.data.covid19Stats[0].deaths;
+//     document.getElementById("recovered").innerHTML +=
+//       response.data.covid19Stats[0].recovered;
+//   })
+//   //   })
 
-  .catch(err => {
-    console.log(err);
-  });
+//   .catch(err => {
+//     console.log(err);
+//   });
